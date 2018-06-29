@@ -6,9 +6,9 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-// router.get('/hello', function(req, res){
-//     res.send("Hello World!");
-// });
+router.get('/hello', function(req, res){
+    res.send("Hello World!");
+});
 
 // // router.get('/hello/:id', function(req, res){
 // //   res.send('The id you find is' + req.params.id)
