@@ -18,6 +18,7 @@ module.exports  = {
         inline: true,
         port: 3000
     },
+    devtool:'inline-source-map',
     module: {
         rules: [
             {
@@ -37,4 +38,3 @@ module.exports  = {
     plugins: [htmlPlugin]
 }
 
-module.exports

@@ -1,49 +1,18 @@
-// require mongoose
-const mongoose = require('mongoose')
-// connect
-mongoose.connect('mongodb://localhost/myDatabase')
-//tao Schema
-const userSchema = new mongoose.Schema({
-    name:String,
-    age: Number
+var mongodb = require('mongodb');
+var MongoClient = mongodb.MongoClient;
+
+
+var url = 'mongodb://localhost:27017/nodeEx'
+MongoClient.connect(url, function (err, db) {
+    if(err){
+        console.log('Khong the ket noi vao database. Loi ket noi la:', err)
+    }
+    else {
+        console.log('Ket noi thanh cong den', url)
+        //do some work with the database
+
+
+
+        db.close();
+    }
 })
-// tao model
-const user = mongoose.model('user', userSchema)
-// CRUD
-//tao mot user
-// user.create({
-//     name:"ty",
-//     age:23
-// })
-
-//tao nhieu user
-// user.create(
-//     [{
-//         name: "khuong",
-//         age: 23
-//     },
-//     {
-//         name: "hung",
-//         age:14
-//     },
-//     {
-//         name: "huyen",
-//         age:15
-//     }]);
-
-//tim kiem va in ket qua cac user
-// user.find().exec((err, users)=>{
-//     console.log(users)
-// })
-
-//update mot user
-// user.update({name:"hung"},{name:"dau da"})
-//     .exec((err,result)=>{
-//         console.log(result)
-//     })
-
-//remove user
-// user.remove({name:"dauda"})
-//     .exec((err,result)=>{
-//         console.log(result)
-//     })
